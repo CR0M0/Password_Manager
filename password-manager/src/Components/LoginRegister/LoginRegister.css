@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@400;600;700&display=swap');
+
+.wrapper {
+    position: relative;
+    width: 420px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: height .2s ease;
+}
+
+/* Wrapper height adjustments for different views */
+.wrapper.register {
+    height: 500px;
+}
+
+.wrapper.show-secret-phrase {
+    height: 700px;
+}
+
+.wrapper.forgot-password {
+    height: 600px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+/* Login form positioning */
+.wrapper.login .form-box.login {
+    transition: translate .18s ease;
+    translate: 0; /* Visible */
+}
+
+.wrapper.register .form-box.login {
+    transition: translate .18s ease;
+    translate: -400px; /* Off-screen left */
+}
+
+.wrapper.show-secret-phrase .form-box.login {
+    transition: translate .18s ease;
+    translate: -400px; /* Off-screen left */
+}
+
+.wrapper.forgot-password .form-box.login {
+    transition: translate .18s ease;
+    translate: -400px; /* Off-screen left */
+}
+
+/* Register form positioning */
+.wrapper .form-box.register {
+    position: absolute;
+    transition: translate .18s ease;
+}
+
+.wrapper.login .form-box.register {
+    translate: 400px; /* Off-screen right */
+}
+
+.wrapper.register .form-box.register {
+    translate: 0; /* Visible */
+}
+
+.wrapper.show-secret-phrase .form-box.register {
+    translate: 400px; /* Off-screen right */
+}
+
+.wrapper.forgot-password .form-box.register {
+    translate: 400px; /* Off-screen right */
+}
+
+/* Secret phrase form positioning */
+.wrapper .form-box.secret-phrase {
+    position: absolute;
+    transition: translate .18s ease;
+}
+
+.wrapper.login .form-box.secret-phrase {
+    translate: 400px; /* Off-screen right */
+}
+
+.wrapper.register .form-box.secret-phrase {
+    translate: 400px; /* Off-screen right */
+}
+
+.wrapper.show-secret-phrase .form-box.secret-phrase {
+    translate: 0; /* Visible */
+}
+
+.wrapper.forgot-password .form-box.secret-phrase {
+    translate: 400px; /* Off-screen right */
+}
+
+/* Forgot password form positioning */
+.wrapper .form-box.forgot-password {
+    position: absolute;
+    transition: translate .18s ease;
+}
+
+.wrapper.login .form-box.forgot-password {
+    translate: 400px; /* Off-screen right */
+}
+
+.wrapper.register .form-box.forgot-password {
+    translate: 400px; /* Off-screen right */
+}
+
+.wrapper.show-secret-phrase .form-box.forgot-password {
+    translate: 400px; /* Off-screen right */
+}
+
+.wrapper.forgot-password .form-box.forgot-password {
+    translate: 0; /* Visible */
+}
+
+form h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.logo {
+    font-family: "Audiowide", sans-serif;
+    font-size: 30px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    color: #fff;
+}
+
+form .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .1);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    translate: 0 -50%;
+    font-size: 16px;
+}
+
+form .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 4px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+form button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+}
+
+form button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+form .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+/* Secret Phrase Specific Styles */
+.secret-phrase h2 {
+    font-size: 20px;
+    color: #ffeb3b;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.warning-box {
+    background-color: rgba(255, 235, 59, 0.1);
+    border: 1px solid rgba(255, 235, 59, 0.3);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.warning-box p {
+    margin: 8px 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.warning-box strong {
+    color: #ffeb3b;
+}
+
+.warning-box ul {
+    margin: 8px 0;
+    padding-left: 20px;
+    font-size: 13px;
+}
+
+.warning-box li {
+    margin: 4px 0;
+}
+
+.secret-phrase-box {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.phrase-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.phrase-display {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    word-break: break-word;
+    color: #4fc3f7;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.copy-button {
+    background-color: rgba(33, 150, 243, 0.8);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.copy-button:hover {
+    background-color: rgba(33, 150, 243, 1);
+}
+
+.confirmation-section {
+    margin: 15px 0;
+}
+
+.confirmation-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.confirmation-label input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #4fc3f7;
+}
+
+.confirmation-label span {
+    color: #fff;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.confirm-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.confirm-button:hover:not(:disabled) {
+    background-color: #45a049;
+}
+
+.confirm-button:disabled {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Forgot Password Specific Styles */
+.forgot-password h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.forgot-password p {
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.forgot-password .input-box {
+    margin: 25px 0;
+}
+
+.forgot-password button[type="submit"] {
+    margin-top: 10px;
+}
+
+.forgot-password .register-link {
+    margin-top: 20px;
+}
